@@ -110,7 +110,6 @@ func manage_animations() -> void:
 		_sprite.flip_h = false
 	elif velocity.x < 0:
 		_sprite.flip_h = true
-	print ("state = ", STATES.keys()[state])
 	match state:
 		STATES.IDLE:
 			_animation_player.play("Idle")
@@ -178,9 +177,6 @@ func apply_velocity(delta : float, move_direction : Vector2) -> void:
 func apply_friction(delta : float) -> void:
 	var fric_x = FRICTION * delta * sign(velocity.x) * -1
 	var fric_y = FRICTION * delta * sign(velocity.y) * -1
-	print ("fric_x = ", fric_x)
-	print ("fric_y = ", fric_y)
-	print ("velocity before friction = ", velocity)
 
 	if abs(velocity.x) <= abs(fric_x):
 		velocity.x = 0
@@ -192,7 +188,6 @@ func apply_friction(delta : float) -> void:
 	else:
 		velocity.y += fric_y
 
-	print ("velocity after friction = ", velocity)
 
 # Sets the sprinting variable according to the strength of the sprint input action
 func handle_sprint(sprint_strength : float) -> void:
@@ -212,7 +207,6 @@ func handle_dash(dash_speed : float) -> void:
 
 # after the duration of the timer, set dashing to false so the max speed decreases
 func _on_dash_timer_timeout() -> void:
-	print ("dash completed")
 	dashing = false
 	dash_timer.stop()
 

@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://b65q3tp2dh02u"]
+[gd_scene load_steps=9 format=3 uid="uid://bomnjqtdwfyc"]
 
-[ext_resource type="Script" path="res://src/2DTopDownPlayerController.gd" id="1_c20lb"]
-[ext_resource type="Texture2D" uid="uid://c763yfown7hgi" path="res://src/Player.png" id="2_45kan"]
+[ext_resource type="Script" path="res://2DTopDownCharacterController/2DTopDownPlayerController.gd" id="1_f8wbr"]
+[ext_resource type="Texture2D" uid="uid://c763yfown7hgi" path="res://2DTopDownCharacterController/Player.png" id="2_7i2iq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4xe80"]
 size = Vector2(12, 16)
@@ -80,7 +80,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_c20lb")
+script = ExtResource("1_f8wbr")
 ACTION_UP = null
 ACTION_DOWN = null
 ACTION_LEFT = null
@@ -109,7 +109,7 @@ shape = SubResource("RectangleShape2D_4xe80")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_45kan")
+texture = ExtResource("2_7i2iq")
 hframes = 7
 frame = 5
 

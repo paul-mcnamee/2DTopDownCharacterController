@@ -2,7 +2,7 @@
 
 ## Description
 
-A basic character controller class for a CharacterBody2D used as a starting point for a 2d top down style game.
+A basic character controller class for a CharacterBody2D used as a starting point for a 2d top down style game created to be used with Godot 4.1.
 
 Implements wasd + controller movement, friction, walking, sprinting, and dashing.
 

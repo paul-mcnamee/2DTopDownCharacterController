@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b65q3tp2dh02u"]
 
-[ext_resource type="Script" path="res://2DTopDownPlayerController.gd" id="1_83jmy"]
-[ext_resource type="Texture2D" uid="uid://c763yfown7hgi" path="res://Player.png" id="2_ttx00"]
+[ext_resource type="Script" path="res://src/2DTopDownPlayerController.gd" id="1_c20lb"]
+[ext_resource type="Texture2D" uid="uid://c763yfown7hgi" path="res://src/Player.png" id="2_45kan"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4xe80"]
 size = Vector2(12, 16)
@@ -79,12 +79,29 @@ _data = {
 "Walk": SubResource("Animation_tc5rf")
 }
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("dash_timer", "dash_cooldown_timer")]
-script = ExtResource("1_83jmy")
-dash_timer = NodePath("DashTimer")
-dash_cooldown_timer = NodePath("DashCooldownTimer")
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_c20lb")
+ACTION_UP = null
+ACTION_DOWN = null
+ACTION_LEFT = null
+ACTION_RIGHT = null
+ACTION_SPRINT = null
+ACTION_DASH = null
+JOYSTICK_MOVEMENT = null
+ACCELERATION = null
+MAX_SPEED = null
+MAX_WALK_SPEED = null
+MAX_SPRINT_SPEED = null
+FRICTION = null
+GRAVITY = null
 ENABLE_SPRINT = true
+SPRINT_MULTIPLIER = null
 ENABLE_DASH = true
+DASH_SPEED = null
+dash_timer = Object(Timer,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","process_callback":1,"wait_time":0.5,"one_shot":false,"autostart":false,"script":null)
+
+dash_cooldown_timer = Object(Timer,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","process_callback":1,"wait_time":5.0,"one_shot":false,"autostart":false,"script":null)
+
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
@@ -92,7 +109,7 @@ shape = SubResource("RectangleShape2D_4xe80")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_ttx00")
+texture = ExtResource("2_45kan")
 hframes = 7
 frame = 5
 

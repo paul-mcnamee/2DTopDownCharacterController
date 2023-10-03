@@ -17,7 +17,7 @@
 
 
 extends CharacterBody2D
-class_name TopDownPlayerController
+class_name 2DTopDownPlayerController
 
 # The path to the character's Sprite node, defaults to 'get_node("Sprite")'
 @export_node_path("Sprite2D") var PLAYER_SPRITE

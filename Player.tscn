@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bmup540rkeooh"]
+[gd_scene load_steps=9 format=3 uid="uid://b65q3tp2dh02u"]
 
-[ext_resource type="Script" path="res://TopDownPlayerController.gd" id="1_iyuqd"]
+[ext_resource type="Script" path="res://2DTopDownPlayerController.gd" id="1_83jmy"]
 [ext_resource type="Texture2D" uid="uid://c763yfown7hgi" path="res://Player.png" id="2_ttx00"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4xe80"]
@@ -80,7 +80,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("dash_timer", "dash_cooldown_timer")]
-script = ExtResource("1_iyuqd")
+script = ExtResource("1_83jmy")
 dash_timer = NodePath("DashTimer")
 dash_cooldown_timer = NodePath("DashCooldownTimer")
 ENABLE_SPRINT = true
@@ -107,6 +107,7 @@ libraries = {
 }
 
 [node name="DashTimer" type="Timer" parent="."]
+wait_time = 0.5
 
 [node name="DashCooldownTimer" type="Timer" parent="."]
 wait_time = 5.0

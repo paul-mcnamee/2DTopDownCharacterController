@@ -1,23 +1,21 @@
-# This is a top down player controller
-
-#     -- Quirks and Considerations --
-#
-# If you don't provide an input direction then the speed could be higher than the expected max
-# what this means is basically if you dash, you can go a greater distance if you let go of the direction
-# I think it is kind of cool because it makes it a little bit more skill based
-# you can for example:
-# 	w + dash
-# 	release w
-# 	wait until you reach sprint speed
-# 	hold sprint + w
-#
-# 	depending on the friction and dash timer duration, this could make you travel a greater distance than if you would just hold w + sprint + dash
-#
-# I think this could possibly be a lot cleaner if this used signals and leveraged animation controllers more, but that might make it less flexible.
-
-
+class_name TopDownPlayerController2D
 extends CharacterBody2D
-class_name 2DTopDownPlayerController
+## This is a top down player controller meant to be used in 2d games.
+##
+## -- Quirks and Considerations --
+##
+## If you don't provide an input direction then the speed could be higher than the expected max
+## what this means is basically if you dash, you can go a greater distance if you let go of the direction
+## I think it is kind of cool because it makes it a little bit more skill based
+## you can for example:
+## 	w + dash
+## 	release w
+## 	wait until you reach sprint speed
+## 	hold sprint + w
+##
+## 	depending on the friction and dash timer duration, this could make you travel a greater distance than if you would just hold w + sprint + dash
+##
+## I think this could possibly be a lot cleaner if this used signals and leveraged animation controllers more, but that might make it less flexible.
 
 # The path to the character's Sprite node, defaults to 'get_node("Sprite")'
 @export_node_path("Sprite2D") var PLAYER_SPRITE
